@@ -3,12 +3,13 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-global clickEvent := true
-~LButton:: global clickEvent := true
+global skipEnter := true
+~LButton:: global skipEnter := true
+~Esc:: global skipEnter := true
 
 F19:: ; Remap Super Alt Tab key here, if desired.
 {
-global clickEvent := false
+global skipEnter := false
 Send, ^!{Tab} 
 KeyWait F19,
 
@@ -21,9 +22,10 @@ If (!ErrorLevel)
 	}
 
 ; This conditional enables that a window is automatically selected when the Super Alt Tab key
-; is released, while ensuring that if a window is selected by mouse click
-; an erroneous 'Enter' command is not passed into the window's processes.
-if (clickEvent = false)
+; is released, while ensuring that if a window is selected by mouse click or if the window
+; selection process is cancelled with 'Esc', an erroneous 'Enter' command is not passed into 
+; the window's processes.
+if (skipEnter = false)
 	{
 	Send, {Enter} 
 	}
