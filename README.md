@@ -2,7 +2,7 @@
 
 This script creates a highly efficient, ergonomic, fluid "Super Alt Tab" key.
 On tap and release, the key switches to the last used window.
-If held, by default the 'i', 'j', 'k', and 'l' temporarily function as arrow
+If held, by default the 'i', 'j', 'k', and 'l' keys temporarily function as arrow
 keys, allowing for quick window selection. When the Super Alt Tab key is
 released, the highlighted window is brought forward.
 When double-tapped, the Super Alt Tab key passes an alt + space command
