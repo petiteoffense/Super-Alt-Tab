@@ -12,7 +12,7 @@ global clickEvent := false
 Send, ^!{Tab} 
 KeyWait F19,
 
-; This block and 'launchy' subroutine allows a rapid double-press ot the Super Alt Tab key
+; This block and 'launchy' subroutine allows a rapid double-press of the Super Alt Tab key
 ; to bring forward a Launchy prompt, if installed.
 KeyWait, F19, D T.075
 If (!ErrorLevel)
